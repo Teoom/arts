@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Kyiv';
+  src: url("fonts/KyivTypeSans-VarGX.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Acworth';
+  src: url("fonts/acworth-bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_medium.otf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_extrabold.otf");
+  font-family: 800;
+  font-style: normal;
+}
+.content {
+  max-width: 1390px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+// 415
+@media (max-width: 415px) {
+  html, body {
+    overflow-x:hidden;
+  } 
+  body.lock {
+    overflow: hidden;
+  }
+  .content {
+    max-width: 372px;
+    margin: 0 21px;
+  }
+}
+
+// 315
+@media (max-width: 375px) {
+  .content {
+    max-width: 335px;
+  }
+}
+%style-kyiv {
+  font: 18px/21px 'Kyiv';
+  font-weight: 500;
+  color: #fff;
+}
+@mixin geom($s, $l, $w) {
+  font-family: 'Geometria';
+  font-size: $s;
+  line-height: $l;
+  font-weight: $w;
+  color: #fff;
+}
+
+@mixin kyiv($s, $l, $w) {
+  font-family: 'Kyiv';
+  font-size: $s;
+  line-height: $l;
+  font-weight: $w;
+}
+
+
