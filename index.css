@@ -1,0 +1,758 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px; }
+
+img {
+  display: block; }
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'Kyiv';
+  src: url("fonts/KyivTypeSans-VarGX.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Acworth';
+  src: url("fonts/acworth-bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_medium.otf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Geometria';
+  src: url("fonts/geometria_extrabold.otf");
+  font-family: 800;
+  font-style: normal; }
+.content {
+  max-width: 1390px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative; }
+
+@media (max-width: 415px) {
+  html, body {
+    overflow-x: hidden; }
+
+  body.lock {
+    overflow: hidden; }
+
+  .content {
+    max-width: 372px;
+    margin: 0 21px; } }
+@media (max-width: 375px) {
+  .content {
+    max-width: 335px; } }
+.header__link, .footer__list li, .footer__link {
+  font: 18px/21px 'Kyiv';
+  font-weight: 500;
+  color: #fff; }
+
+header {
+  width: 100%;
+  background-color: #B91616;
+  padding: 31px 0; }
+
+.header__logo {
+  display: none; }
+
+.header__burger {
+  display: none; }
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  padding-left: 315px; }
+
+.header__list {
+  display: flex;
+  position: relative;
+  margin-right: 114px; }
+
+.header__list li {
+  list-style: none;
+  margin-right: 75px; }
+
+.header__link {
+  text-decoration: none; }
+
+.header__link.ru {
+  white-space: nowrap; }
+
+.header__link__icon {
+  position: relative;
+  top: -6px; }
+
+.header__lang {
+  width: 126px;
+  position: relative; }
+
+.header__lang__btn {
+  cursor: pointer;
+  font-family: 'Geometria';
+  font-size: 18px;
+  line-height: 22.64px;
+  font-weight: 500;
+  color: #fff;
+  padding-left: 13px; }
+
+.header__lang__btn::after {
+  background: url("img/lang__arrow.svg") no-repeat;
+  content: '';
+  width: 28px;
+  height: 9px;
+  position: absolute;
+  top: 7px;
+  left: 64px; }
+
+.header__lang__dropdown {
+  display: none;
+  width: inherit;
+  padding-bottom: 18px;
+  background-color: #B91616;
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 13px;
+  z-index: 1; }
+
+.header__lang__dropdown a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Geometria';
+  font-size: 18px;
+  line-height: 22.64px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px; }
+  .header__lang__dropdown a:hover {
+    background-color: #831f1f; }
+  .header__lang__dropdown a:last-child {
+    margin-bottom: 0px; }
+
+.header__lang:hover .header__lang__dropdown {
+  display: block; }
+
+@media (max-width: 415px) {
+  header {
+    width: 100%;
+    padding: 21px 0px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    vertical-align: middle; }
+
+  .header__logo {
+    display: block;
+    position: relative;
+    padding-bottom: 21px; }
+
+  .header__logo img {
+    width: 67px;
+    height: 19px;
+    position: absolute;
+    z-index: 5; }
+
+  .header__burger {
+    display: block;
+    width: 15.56px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5; }
+
+  .header__burger span {
+    width: 100%;
+    height: 2.22px;
+    background-color: #fff;
+    position: absolute;
+    top: 7px;
+    border-radius: 60px; }
+
+  .header__burger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7.11px;
+    height: 2.2px;
+    background-color: #fff;
+    border-radius: 60px; }
+
+  .header__burger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12.44px;
+    height: 2.22px;
+    background-color: #fff;
+    border-radius: 60px; }
+
+  .header__burger.active span {
+    transform: scale(0); }
+
+  .header__burger.active::before {
+    width: 100%;
+    transform: rotate(45deg);
+    top: 8px; }
+
+  .header__burger.active::after {
+    width: 100%;
+    transform: rotate(-45deg);
+    bottom: 6px; }
+
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #B91616;
+    overflow: auto;
+    transition: all 0.3s ease 0s; }
+
+  .header__menu.active {
+    top: 0px; }
+
+  .header__nav {
+    display: block;
+    padding: 100px 21px; }
+
+  .header__list {
+    display: block; }
+
+  .header__list li {
+    margin-bottom: 45px; }
+
+  .header__list li:nth-child(3) {
+    display: none; }
+
+  .header__link {
+    font-family: 'Kyiv';
+    font-size: 42px;
+    line-height: 50.4px;
+    font-weight: 500;
+    white-space: nowrap; }
+
+  .header__lang {
+    display: none; } }
+main {
+  width: 100%;
+  background-color: #101010;
+  padding-top: 114px;
+  padding-bottom: 179px;
+  overflow-x: hidden; }
+
+.main__title {
+  display: flex;
+  position: relative; }
+
+.main__title__picturesOne {
+  margin-right: 50px; }
+
+.main__title__picturesOne img {
+  width: 430px;
+  height: 280px; }
+
+.main__title__picturesOne img:nth-child(1) {
+  margin-bottom: 55px; }
+
+.main__title__picturesTwo img {
+  width: 910px;
+  height: 615px; }
+
+.main__title__banner {
+  position: absolute;
+  top: 164px;
+  left: 268px;
+  text-align: center;
+  color: #fff; }
+
+.main__title__banner h3 {
+  font-family: 'Geometria';
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #fff; }
+
+.main__title__banner h1 {
+  font: 220px/243px 'Acworth';
+  font-weight: 700; }
+
+.portfolio__title {
+  max-width: 150px;
+  width: 100%;
+  margin-left: auto;
+  position: relative;
+  top: 128px;
+  left: -53px; }
+  .portfolio__title h2 {
+    text-align: right;
+    font-family: 'Geometria';
+    font-size: 24px;
+    line-height: 30.19px;
+    font-weight: 500;
+    color: #fff; }
+  .portfolio__title h2::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: calc(100% + 20px);
+    width: 100vw;
+    height: 1px;
+    background-color: #fff; }
+
+.portfolio__title.ru {
+  white-space: nowrap;
+  left: -85px; }
+  .portfolio__title.ru h2::after {
+    left: calc(100% + 60px); }
+
+.portfolio__container {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap; }
+
+.portfolio__content {
+  width: 670px;
+  height: 395px;
+  position: relative;
+  margin-bottom: 54px; }
+
+.portfolio__content img {
+  width: 670px;
+  height: 395px; }
+
+.portfolio__content:nth-child(2) {
+  margin-top: 50px; }
+
+.portfolio__content:nth-child(2n+3) {
+  margin-top: -50px; }
+
+.portfolio__content:nth-child(odd) {
+  margin-right: 50px; }
+
+.picture__title {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 177.5px 273.5px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  text-align: center; }
+
+.picture__title h2 {
+  color: #fff;
+  font: 36px/39.71px 'Acworth';
+  font-weight: 700; }
+
+.picture__title__icon {
+  background: url("img/info.svg") no-repeat center;
+  position: absolute;
+  top: 25px;
+  right: 26px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer; }
+
+.picture__desc {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 124.5px 86.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff; }
+
+.picture__desc__icon {
+  background: url("img/exit.svg") no-repeat center;
+  position: absolute;
+  top: 25px;
+  right: 26px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer; }
+
+.picture__desc h2 {
+  font-family: 'Geometria';
+  font-size: 20px;
+  line-height: 25.16px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 21px; }
+
+.picture__desc p {
+  font-family: 'Geometria';
+  font-size: 20px;
+  line-height: 25.16px;
+  font-weight: 700;
+  color: #fff; }
+
+.portfolio__content:hover .picture__title {
+  display: block; }
+
+.portfolio__content.info .picture__title {
+  display: none; }
+
+.portfolio__content.info .picture__desc {
+  display: block; }
+
+.portfolio_pic__hidden {
+  display: none; }
+
+.portfolio_pic__hidden.active {
+  display: block; }
+
+.portfolio_pic__hidden__drop {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -50px;
+  animation: slowDown 2s linear; }
+
+@keyframes slowDown {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+.portfolio__btn {
+  width: 225px;
+  height: 65px;
+  padding: 21px 64px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-family: 'Geometria';
+  font-size: 18px;
+  line-height: 22.64px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  margin: 0 auto; }
+
+.aboutme__title {
+  margin-top: 125px;
+  max-width: 120px;
+  width: 100%;
+  position: relative; }
+  .aboutme__title h2 {
+    font-family: 'Geometria';
+    font-size: 24px;
+    line-height: 30.19px;
+    font-weight: 500;
+    color: #fff; }
+  .aboutme__title h2::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: calc(100% + 20px);
+    width: 100vw;
+    height: 1px;
+    background-color: #fff; }
+
+.aboutme__container {
+  margin-top: 150px;
+  padding-bottom: 98px;
+  position: relative; }
+
+.aboutme__text {
+  width: 1150px;
+  font: 80px/88.24px 'Acworth';
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1; }
+
+.aboutme__text span {
+  color: #B91616; }
+
+.aboutme__text::after {
+  content: '';
+  width: 100vw;
+  height: 56px;
+  background-color: #B91616;
+  position: absolute;
+  top: 15px;
+  right: calc(100% + 20px); }
+
+.aboutme__picture img {
+  width: 985px;
+  height: 720px;
+  position: absolute;
+  z-index: 0;
+  top: -92px;
+  left: 670px; }
+
+@media (max-width: 415px) {
+  main {
+    padding-top: 108px;
+    padding-bottom: 67px; }
+
+  .main__title__picturesOne {
+    margin-right: 21px; }
+
+  .main__title__picturesOne img {
+    width: 108px;
+    height: 284px;
+    object-fit: cover; }
+
+  .main__title__picturesOne img:nth-child(1) {
+    margin-bottom: 22px; }
+
+  .main__title__picturesTwo {
+    width: 243px;
+    height: 590px;
+    background: url("img/mobile_title.jpg") no-repeat top center/cover; }
+
+  .main__title__picturesTwo img {
+    display: none; }
+
+  .main__title__banner {
+    top: 253px;
+    left: 27px; }
+
+  .main__title__banner h3 {
+    font: 18px/19.85px 'Acworth';
+    font-weight: 700; }
+
+  .main__title__banner h1 {
+    font: 82px/90.45px 'Acworth';
+    font-weight: 700; }
+
+  .portfolio__title {
+    top: 43px;
+    left: -52px; }
+    .portfolio__title h2 {
+      font-family: 'Geometria';
+      font-size: 15px;
+      line-height: 18.87px;
+      font-weight: 500;
+      color: #fff; }
+
+  .portfolio__title.ru {
+    left: -52px; }
+    .portfolio__title.ru h2::after {
+      left: calc(100% + 20px); }
+
+  .portfolio__container {
+    padding-top: 66px;
+    display: block; }
+
+  .portfolio__content {
+    width: 372px;
+    height: 219px; }
+
+  .portfolio__content img {
+    width: 372px;
+    height: 219px; }
+
+  .portfolio__content:nth-child(2),
+  .portfolio__content:nth-child(2n+3),
+  .portfolio__content:nth-child(odd) {
+    margin-right: 0px;
+    margin-top: 0px; }
+
+  .picture__title {
+    width: 372px;
+    height: 219px;
+    padding: 97px 145px; }
+
+  .picture__desc {
+    padding: 65px 14px; }
+
+  .portfolio_pic__hidden__drop {
+    display: block;
+    margin-top: 0; }
+
+  .picture__title h2 {
+    font: 24px/26.47px 'Acworth';
+    font-weight: 700; }
+
+  .picture__desc h2 {
+    font-family: 'Geometria';
+    font-size: 12px;
+    line-height: 15.1px;
+    font-weight: 400;
+    color: #fff; }
+
+  .picture__desc p {
+    font-family: 'Geometria';
+    font-size: 12px;
+    line-height: 15.1px;
+    font-weight: 700;
+    color: #fff; }
+
+  .portfolio__btn {
+    max-width: 190px;
+    height: 55px;
+    padding: 18.5px 57.5px;
+    font-family: 'Geometria';
+    font-size: 14px;
+    line-height: 17.61px;
+    font-weight: 800;
+    color: #fff; }
+
+  .aboutme__title {
+    margin-top: 57px;
+    margin-left: 53px; }
+    .aboutme__title h2 {
+      font-family: 'Geometria';
+      font-size: 15px;
+      line-height: 18.87px;
+      font-weight: 500;
+      color: #fff; }
+
+  .aboutme__container {
+    position: relative;
+    margin-top: 149px;
+    padding-bottom: 112px; }
+
+  .aboutme__text {
+    width: 358px;
+    font: 40px/44.12px 'Acworth';
+    font-weight: 700; }
+    .aboutme__text::after {
+      height: 28px;
+      top: 8px;
+      right: calc(100% + 6px); }
+
+  .aboutme__picture {
+    width: 302px;
+    height: 630px;
+    background: url("img/mobile__aboutme.jpg") no-repeat top center/cover;
+    position: absolute;
+    top: -121px;
+    right: -15px; }
+
+  .aboutme__picture img {
+    display: none; } }
+@media (max-width: 375px) {
+  .portfolio__container img {
+    width: 335px; } }
+footer {
+  padding: 59px 0px;
+  width: 100%;
+  background-color: #B91616; }
+
+.footer__list {
+  display: flex;
+  align-items: center; }
+
+.footer__list li {
+  list-style: none;
+  margin-right: 50px;
+  white-space: nowrap; }
+
+.footer__list li:first-child {
+  margin-right: 220px; }
+
+.footer__list li:last-child {
+  margin-left: 200px; }
+
+.footer__title {
+  font-family: 'Geometria';
+  font-size: 24px;
+  line-height: 30.19px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap; }
+
+.footer__link {
+  text-decoration: none; }
+
+.top {
+  font-family: 'Geometria';
+  font-size: 18px;
+  line-height: 22.64px;
+  font-weight: 500;
+  color: #fff;
+  position: relative; }
+
+.top::after {
+  content: '';
+  background: url("img/footer__arrow.svg") no-repeat;
+  width: 22.81px;
+  height: 23.73px;
+  position: absolute;
+  top: -2px;
+  right: -45px; }
+
+@media (max-width: 415px) {
+  footer {
+    padding: 23.5px 0; }
+
+  .footer__title {
+    font-family: 'Geometria';
+    font-size: 10px;
+    line-height: 12.58px;
+    font-weight: 500;
+    color: #fff; }
+
+  .footer__list li:first-child {
+    margin-right: 20px; }
+
+  .footer__list li {
+    margin-right: 10px; }
+
+  .footer__list li:last-child {
+    margin-left: 20px; }
+
+  .footer__list li,
+  .footer__link {
+    font-family: 'Kyiv';
+    font-size: 6px;
+    line-height: 7.2px;
+    font-weight: 500; }
+
+  .top {
+    font-family: 'Geometria';
+    font-size: 8px;
+    line-height: 10.06px;
+    font-weight: 500;
+    color: #fff; }
+    .top::after {
+      top: -8px;
+      right: -29px; } }
+@media (max-width: 375px) {
+  .footer__list li:first-child {
+    margin-right: 10px; }
+
+  .footer__list li:last-child {
+    margin-left: 0px; } }
