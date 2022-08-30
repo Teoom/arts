@@ -393,7 +393,11 @@ main {
 }
 
 @media (max-width: 375px) {
+  .main__title__banner {
+    left: 12px;
+  }
   .portfolio__container img{
     width: 335px;
   }
+  
 }
